@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookList</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <style>
+        .success, .error{
+            color: white;
+            padding: 5px;
+            margin: 5px 0 15px 0;
+        }
+
+        .success{
+            background: green;
+        }
+
+        .error{
+            background: red;
+        }
+
+        #borrower{
+            display: none;
+        }
+
+        h5{
+            font-size: 1em;
+            font-weight:700;
+            font-variant: small-caps;
+        }
+
+        h1{
+            font-size: 2em;
+            padding: 10px;
+            background: #222;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>My e-Library</h1>
+    <div class="container">
+        
+
+        <form id="book-form">
+            <h5>Add a Book</h5>
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="book-title" class="u-full-width">
+            </div>
+
+            <div>
+                <label for="author">Author</label>
+                <input type="text" id="book-author" class="u-full-width">
+            </div>
+
+            <div>
+                <label for="isbn">ISBN</label>
+                <input type="text" id="book-isbn" class="u-full-width">
+            </div>
+
+            <div>
+                <label for="status">Status</label>
+                <select name="status" id="book-status">
+                    <option value="Read">Read</option>
+                    <option value="Unread">Unread</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Loaned to" id="loaned-to">Loaned to</option>
+                    <option value="Borrowed from" id="borrowed-from">Borrowed from</option>
+                    
+                    <input type="text" id="borrower" placeholder="lender's name">
+                </select>
+            </div>
+
+            <div>
+                <input type="submit" value="Submit" class="u-full-width">
+            </div>
+        </form>
+
+        <table class="u-full-width">
+            <h5>Inventory</h5>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="book-list">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+    <!-- <script src="es6.js"></script> -->
+</body>
+</html>
